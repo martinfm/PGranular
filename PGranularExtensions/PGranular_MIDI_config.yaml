@@ -1,0 +1,52 @@
+# --- MIDI control configuration text --- # 
+# --- instructions in commented text below --- # 
+
+play: [ current, 1 ] 
+selectionStart: [ current, 2 ]
+selectionSize: [ current, 3 ]
+selectionStartAdjust: [ current, 4 ]
+durFactor: [ current, 5 ]
+pitchFactor: [ current, 6 ]
+
+pitchLFO: [ 0, 7, 1, 7 ]
+ampLFO: [ 0, 8 ]
+
+maxPitchLFO: [  ]
+record: [  ]
+posLFO: [ ]
+
+### INSTRUCTIONS ### 
+
+# tick the "MIDI CONTROL IN" box to control the synthesis parameters via MIDI.
+# All the MIDI devices connected to your system will be answered, as long as 
+# they use the channel number that you set in the top-right "Channel" box.
+
+# tick the "MIDI NOTE" box to play the granular synth with MIDI notes.
+# The "Type" combo box lets you select between Piano mode and Percussion mode. 
+# All the MIDI devices connected to your system will be answered,as long as  
+# they use the channel number that you set in the "Channel" 
+# box next to the "Type" combo box.
+
+# The non commented text above ( comments are lines starting with a # )
+# is to map systhesis parameters to selections and MIDI control numbers. 
+# Every parameter maps to a list of pairs: 
+# (selection,  MIDI cc number). For example :
+# posLFO: [3, 4] maps cc number 4 to posLFO parameter on selection 3;
+# posLFO: [ 3, 4, 5, 4 ] maps cc number 4 to posLFO parameter on selections 3 and 5;
+# Use "current" to apply the command to the currently selected selection.
+# posLFO: [current, 4] 
+ 
+
+# press "Connect" to start the MIDI mapping with this configuration.
+# press "Disconnect" to stop the mapping.
+# press "Save Config" to persist this configuration so that next time
+# you open the MIDI panel you'll find the same configuration.
+#
+# Unfortunately persistence engine scrumbles up the order of the lines and
+# removes commented lines, namely it REMOVES THESE INSTRUCTIONS!!
+# The content of this text area is persisted in 
+# PGranularExtensions/PGranular_MIDI_config.yaml 
+# so you can back this file up if you want to retain these instructions.
+
+
+
