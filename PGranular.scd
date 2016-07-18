@@ -391,7 +391,7 @@ wave.addDependant({arg wave, what, val;
           pitchLFO.value_(wave.pitchLFO(index));
           pitchLFOSlider.value_(wave.maxPitchLFO(index));
 
-          wave.view.scrollTo(wave.selectionStart(index)/wave.view.numFrames);
+          //wave.view.scrollTo(wave.selectionStart(index)/wave.view.numFrames);
         }.defer;
       },
       'durFactor',{
