@@ -74,6 +74,7 @@ window = Window.new(" __ P-Granular __", Rect(20,50, 1020, 640))/*.alwaysOnTop_(
 window.view.decorator = FlowLayout(window.view.bounds).gap_(5 @ 5).margin_(10 @ 10);
 
 wave = PGranularWave.new(window, Rect(20,20, 1000, 260),c_NUM_SELECTIONS);
+
 /* add this wave to the global list of waves to keep track
 * of the waves if multiple instances  of grain window are open */
 if(~pgranularwaves.isNil,{
@@ -813,6 +814,9 @@ window.onClose = {
 
 s.waitForBoot({
   window.front;
+  /* looks like gridOn = false only works after the window is brought to the front */
+  wave.view.gridColor = Color.black;
+  wave.view.gridOn = false;
 });
 
 
